@@ -2,6 +2,7 @@ export { Badge } from "./Badge";
 export { Button } from "./Button";
 export { ExpandableFeatureCard } from "./ExpandableFeatureCard";
 export { FeatureCard } from "./FeatureCard";
+export { HorizontalFeatureCard } from "./HorizontalFeatureCard";
 export { FeatureModal } from "./FeatureModal";
 export { MacOSDock } from "./MacOSDock";
 export { MediaPlaceholder } from "./MediaPlaceholder";
