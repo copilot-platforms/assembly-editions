@@ -27,26 +27,20 @@ export function Footer({ className }: FooterProps) {
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-zinc-400">
             <a
-              href="https://www.assembly.com"
+              href="https://assembly.com/signup?utm_source=edition&utm_medium=web&utm_campaign=assembly2-launch"
               target="_blank"
               rel="noopener"
               className="transition-colors hover:text-zinc-100"
             >
-              Website
+              Start Free Trial
             </a>
             <a
-              href="https://www.assembly.com/brand"
+              href="https://assembly.com"
               target="_blank"
               rel="noopener"
               className="transition-colors hover:text-zinc-100"
             >
-              Brand
-            </a>
-            <a
-              href="#"
-              className="transition-colors hover:text-zinc-100"
-            >
-              Documentation
+              Visit Assembly
             </a>
           </div>
 

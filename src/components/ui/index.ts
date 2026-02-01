@@ -1,6 +1,10 @@
 export { Badge } from "./Badge";
 export { Button } from "./Button";
+export { ExpandableFeatureCard } from "./ExpandableFeatureCard";
 export { FeatureCard } from "./FeatureCard";
+export { FeatureModal } from "./FeatureModal";
+export { MacOSDock } from "./MacOSDock";
 export { MediaPlaceholder } from "./MediaPlaceholder";
+export { ScreenshotDisplay } from "./ScreenshotDisplay";
 export { SectionHeading } from "./SectionHeading";
 export { VideoPlaceholder } from "./VideoPlaceholder";

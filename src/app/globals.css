@@ -1,13 +1,65 @@
 @import "tailwindcss";
 
+/* PP Mori - Primary sans-serif font */
+@font-face {
+  font-family: "PP Mori";
+  src: url("/fonts/PP Mori /PPMori-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Mori";
+  src: url("/fonts/PP Mori /PPMori-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Mori";
+  src: url("/fonts/PP Mori /PPMori-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Mori";
+  src: url("/fonts/PP Mori /PPMori-SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ABC Diatype Mono - Monospace font */
+@font-face {
+  font-family: "ABC Diatype Mono";
+  src: url("/fonts/ABC Diatype/ABC Diatype Mono/ABCDiatypeMono-Regular-Trial.woff2") format("woff2"),
+       url("/fonts/ABC Diatype/ABC Diatype Mono/ABCDiatypeMono-Regular-Trial.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ABC Diatype Mono";
+  src: url("/fonts/ABC Diatype/ABC Diatype Mono/ABCDiatypeMono-Medium-Trial.woff2") format("woff2"),
+       url("/fonts/ABC Diatype/ABC Diatype Mono/ABCDiatypeMono-Medium-Trial.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Assembly Brand Colors */
   --color-assembly-black: #101010;
   --color-assembly-blue: #BCE7F4;
-  --color-assembly-blue-dark: #8CD3E8;
-  --color-assembly-blue-light: #D5F0F8;
+  --color-assembly-blue-dark: #8AD4E9;
+  --color-assembly-blue-light: #D4F1F9;
 
-  /* Neutrals */
+  /* Zinc scale for dark mode */
   --color-zinc-950: #09090b;
   --color-zinc-900: #18181b;
   --color-zinc-800: #27272a;
@@ -31,10 +83,10 @@
   --color-accent: var(--color-assembly-blue);
   --color-accent-dark: var(--color-assembly-blue-dark);
   --color-muted: var(--color-zinc-400);
-  --color-border: var(--color-zinc-700);
+  --color-border: var(--color-zinc-800);
   --color-card: var(--color-zinc-900);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "PP Mori", system-ui, sans-serif;
+  --font-mono: "ABC Diatype Mono", monospace;
 }
 
 /* Smooth scrolling */
@@ -45,7 +97,7 @@ html {
 body {
   background: var(--color-assembly-black);
   color: var(--color-zinc-100);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: "PP Mori", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -89,4 +141,78 @@ body {
 
 .border-assembly-blue {
   border-color: var(--color-assembly-blue);
+}
+
+/* Floating animations for editions page */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(5deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(-5deg);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-40px, 30px) rotate(-8deg);
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, -20px);
+  }
+  50% {
+    transform: translate(-15px, -30px);
+  }
+  75% {
+    transform: translate(25px, 15px);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.5);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 15s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 12s ease-in-out infinite;
+}
+
+/* Shimmer animation for headline */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 8s ease-in-out infinite;
 }

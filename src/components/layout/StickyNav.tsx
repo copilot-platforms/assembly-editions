@@ -24,7 +24,7 @@ export function StickyNav({ className }: StickyNavProps) {
   return (
     <nav
       className={cn(
-        "sticky top-16 z-40 border-b border-zinc-800/50 bg-[#101010]/90 backdrop-blur-md",
+        "sticky top-16 z-40 border-b border-zinc-800 bg-[#101010]/90 backdrop-blur-md",
         className
       )}
     >

@@ -20,7 +20,7 @@ export function HeroSection() {
       {/* Background gradient */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-zinc-900/50 via-transparent to-[#101010]" />
 
-      <div className="relative z-10 mx-auto max-w-5xl text-center">
+      <div className="relative z-10 mx-auto max-w-5xl text-center 2xl:max-w-6xl">
         {/* Version badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-8 text-5xl font-bold tracking-tight text-zinc-100 sm:text-6xl lg:text-7xl"
+          className="mt-8 text-5xl font-bold tracking-tight text-zinc-100 sm:text-6xl lg:text-7xl 2xl:text-8xl"
         >
           <span className="text-[#BCE7F4]">{BRAND.name}</span> {BRAND.version}
         </motion.h1>
@@ -47,7 +47,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto mt-6 max-w-2xl text-xl text-zinc-400"
+          className="mx-auto mt-6 max-w-2xl text-xl text-zinc-400 2xl:text-2xl 2xl:max-w-3xl"
         >
           {BRAND.tagline}
         </motion.p>
@@ -57,7 +57,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mx-auto mt-4 max-w-3xl text-base text-zinc-500"
+          className="mx-auto mt-4 max-w-3xl text-base text-zinc-500 2xl:text-lg 2xl:max-w-4xl"
         >
           {BRAND.description}
         </motion.p>
@@ -67,9 +67,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12"
+          className="mt-12 2xl:mt-16"
         >
-          <VideoPlaceholder label="Product Demo Video" />
+          <VideoPlaceholder label="Product Demo Video" className="2xl:max-w-5xl 2xl:mx-auto" />
         </motion.div>
       </div>
 

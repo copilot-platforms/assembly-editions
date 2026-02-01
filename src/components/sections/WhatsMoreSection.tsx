@@ -12,13 +12,13 @@ interface SmallFeatureProps {
 
 function SmallFeature({ icon, title, description }: SmallFeatureProps) {
   return (
-    <div className="flex gap-4 rounded-xl border border-zinc-800 bg-zinc-900/30 p-4">
+    <div className="flex gap-4 rounded-xl border border-zinc-800 bg-zinc-900/50 p-4">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-800 text-zinc-400">
         {icon}
       </div>
       <div>
-        <h4 className="font-medium text-zinc-200">{title}</h4>
-        <p className="mt-1 text-sm text-zinc-500">{description}</p>
+        <h4 className="font-medium text-zinc-100">{title}</h4>
+        <p className="mt-1 text-sm text-zinc-400">{description}</p>
       </div>
     </div>
   );
@@ -26,8 +26,8 @@ function SmallFeature({ icon, title, description }: SmallFeatureProps) {
 
 export function WhatsMoreSection() {
   return (
-    <section id="whats-more" className="py-24 px-6 bg-zinc-900/30">
-      <div className="mx-auto max-w-7xl">
+    <section id="whats-more" className="py-24 bg-zinc-900/30">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

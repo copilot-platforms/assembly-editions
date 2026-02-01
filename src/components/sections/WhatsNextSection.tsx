@@ -23,7 +23,7 @@ function RoadmapCard({
 }: RoadmapCardProps) {
   return (
     <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-zinc-700 to-zinc-800 text-[#BCE7F4]">
+      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-700 text-[#BCE7F4]">
         {icon}
       </div>
       <div className="flex items-center gap-3">
@@ -45,8 +45,8 @@ function RoadmapCard({
 
 export function WhatsNextSection() {
   return (
-    <section id="whats-next" className="py-24 px-6">
-      <div className="mx-auto max-w-7xl">
+    <section id="whats-next" className="py-24">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,6 @@ export function WhatsNextSection() {
               icon={<Bot className="h-6 w-6" />}
               title="AI Edition"
               timing="Coming first"
-              badge="Coming Soon"
               features={[
                 "ChatGPT App to ask questions about your clients from anywhere",
                 "MCP server for AI-native workflows",
@@ -90,7 +89,6 @@ export function WhatsNextSection() {
               icon={<Shield className="h-6 w-6" />}
               title="Scale Ready Edition"
               timing="Coming after AI Edition"
-              badge="Coming Soon"
               features={[
                 "Audit logs for compliance and security",
                 "SSO for enterprise authentication",
@@ -108,25 +106,28 @@ export function WhatsNextSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16"
         >
-          <div className="rounded-2xl border border-zinc-700 bg-gradient-to-br from-zinc-800/50 to-zinc-900/50 p-8 text-center md:p-12">
+          <div className="rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-800/50 p-8 text-center md:p-12">
             <h3 className="text-2xl font-bold text-zinc-100">
               Try Assembly 2.0 Today
             </h3>
             <p className="mx-auto mt-4 max-w-xl text-zinc-400">
-              Preview a fully branded client portal with your company&apos;s look and feel before you even sign up. Want early access to upcoming editions or want to shape what we build? Let us know.
+              Start your free trial to experience the full platform, or explore our AI-generated client portal preview to see how Assembly can transform your client experience.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg">
+              <a
+                href="https://assembly.com/signup?utm_source=edition&utm_medium=web&utm_campaign=assembly2-launch"
+                target="_blank"
+                rel="noopener"
+              >
+                <Button size="lg">
+                  Start Free Trial
+                </Button>
+              </a>
+              <Button variant="secondary" size="lg">
                 Preview Your Portal
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="secondary" size="lg">
-                Request Early Access
-              </Button>
             </div>
-            <p className="mt-8 text-sm text-zinc-500">
-              Thanks for building your business on Assembly.
-            </p>
           </div>
         </motion.div>
       </div>

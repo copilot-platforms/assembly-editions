@@ -3,30 +3,28 @@
 import { useState, useEffect } from "react";
 
 export function useScrollSpy(sectionIds: string[], offset: number = 100) {
-  const [activeSection, setActiveSection] = useState<string>("");
+  const [activeSection, setActiveSection] = useState<string>(sectionIds[0] || "");
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + offset;
+      // Tab should activate when the section heading is at/near the top of the viewport
+      // Use a small offset just below the sticky nav (~130px for header + nav)
+      const triggerPoint = 140;
 
-      for (const id of sectionIds) {
-        const element = document.getElementById(id);
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sectionIds[i]);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(id);
+          const rect = element.getBoundingClientRect();
+          // If the top of this section is at or above the trigger point, it's active
+          if (rect.top <= triggerPoint) {
+            setActiveSection(sectionIds[i]);
             return;
           }
         }
       }
 
-      // If we're at the very top, clear active section
-      if (window.scrollY < offset) {
-        setActiveSection("");
-      }
+      // Default to first section if we're at the very top
+      setActiveSection(sectionIds[0]);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });

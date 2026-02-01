@@ -14,13 +14,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex cursor-pointer items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101010] disabled:pointer-events-none disabled:opacity-50",
           {
-            "bg-[#BCE7F4] text-zinc-900 hover:bg-[#8CD3E8] focus-visible:ring-[#BCE7F4]":
+            "bg-[#BCE7F4] text-zinc-900 hover:bg-[#8AD4E9] focus-visible:ring-[#BCE7F4]":
               variant === "primary",
-            "border border-zinc-600 bg-transparent text-zinc-100 hover:border-zinc-500 hover:bg-zinc-800 focus-visible:ring-zinc-500":
+            "border border-zinc-700 bg-transparent text-zinc-100 hover:border-zinc-600 hover:bg-zinc-800/50 focus-visible:ring-zinc-500":
               variant === "secondary",
-            "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 focus-visible:ring-zinc-500":
+            "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/50 focus-visible:ring-zinc-500":
               variant === "ghost",
           },
           {
